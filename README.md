@@ -7,9 +7,13 @@
 #### デモ環境
 - MIRACLE LINUX 8 Aianux Inside (4.18.0-147.5.1.el8.x86_64)
 - MIRACLE FailSafe (miracle-failsafe-4.2.1-2.x86_64)
+- Node.js (v10.16.3)
+- MariaDB (10.3.17)
+- Apache (2.4.37)
 #### サンプルスクリプトの利用方法
 1. 必要に応じて、以下を事前にインストールしてください。
    - Node.js
+     - RESTful API でクラスタを操作する場合に必要となります。
    - MariaDB
    - Apache
 1. MIRACLE FailSafe をインストールし、ライセンスを登録してください。
@@ -27,6 +31,7 @@
    01_mariadb の場合
 
    01_mariadb
+    |
     +-- clpcfset
     |
     +-- create_mariadb.pl
