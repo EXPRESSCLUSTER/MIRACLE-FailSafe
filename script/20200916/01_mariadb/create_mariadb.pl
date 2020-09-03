@@ -119,6 +119,14 @@ my $monitor =
     ['mysqlw', 'mysqlw', ['target', 'exec-mariadb'], ['relation/type', 'cls'], ['relation/name', 'LocalServer'], ['emergency/action', '1'], ['parameters/database', 'testdb'], ['parameters/username', 'root'], ['parameters/password', 'cluster-0'], ['parameters/libraryfullpath', '/usr/lib64/libmariadb.so.3']],
     []
 ];
+
+#
+# recovery action
+#
+# norecovery
+# 0: initiate recovery action
+# 1: not initiate recovery action
+my $norecovery = 1;
 ##################################################
 
 
@@ -221,6 +229,11 @@ for ($i = 0; $i < scalar(@$monitor); $i++)
         $ret = `$clpcfset add monparam $monitor->[$i][0] $monitor->[$i][1] $monitor->[$i][$j][0] $monitor->[$i][$j][1]`;
     }
 }
+
+# recovery action
+`$clpcfset add clsparam rc/errordetect/rscact/norecovery $norecovery`;
+`$clpcfset add clsparam rc/errordetect/rscdeact/norecovery $norecovery`;
+`$clpcfset add clsparam rm/errordetect/norecovery $norecovery`;
 
 # add RESTful API parameters
 `node -v`;
