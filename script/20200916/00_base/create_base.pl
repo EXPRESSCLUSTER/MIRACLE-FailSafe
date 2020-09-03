@@ -95,7 +95,7 @@ my $resource =
 [
     # Resources in 1st failover group
     [
-        ['exec', 'exec-mariadb', ['parameters/act/path', 'start.sh'], ['parameters/deact/path', 'stop.sh']],
+        ['exec', 'exec', ['parameters/act/path', 'start.sh'], ['parameters/deact/path', 'stop.sh']],
         []
     ],
     # Resources in 2nd failover group
@@ -116,7 +116,6 @@ my $rscdepend =
 my $monitor =
 [
     ['userw', 'userw', ['relation/type', 'cls'], ['relation/name', 'LocalServer']],
-    ['mysqlw', 'mysqlw', ['target', 'exec-mariadb'], ['relation/type', 'cls'], ['relation/name', 'LocalServer'], ['emergency/action', '1'], ['parameters/database', 'testdb'], ['parameters/username', 'root'], ['parameters/password', 'cluster-0'], ['parameters/libraryfullpath', '/usr/lib64/libmariadb.so.3']],
     []
 ];
 ##################################################
