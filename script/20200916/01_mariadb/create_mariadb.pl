@@ -115,8 +115,24 @@ my $rscdepend =
 #
 my $monitor =
 [
-    ['userw', 'userw', ['relation/type', 'cls'], ['relation/name', 'LocalServer']],
-    ['mysqlw', 'mysqlw', ['target', 'exec-mariadb'], ['relation/type', 'cls'], ['relation/name', 'LocalServer'], ['emergency/action', '1'], ['parameters/database', 'testdb'], ['parameters/username', 'root'], ['parameters/password', 'cluster-0'], ['parameters/libraryfullpath', '/usr/lib64/libmariadb.so.3']],
+    ['userw', 'userw', 
+	    ['relation/type', 'cls'], 
+	    ['relation/name', 'LocalServer']
+    ],
+    ['mysqlw', 'mysqlw', 
+	    ['target', 'exec-mariadb'], 
+	    ['relation/type', 'rsc'], 
+	    ['relation/name', 'exec-mariadb'], 
+	    ['emergency/action', '1'], 
+	    ['emergency/threshold/restart', '2'],
+	    ['parameters/database', 'testdb'], 
+	    ['parameters/username', 'root'], 
+	    ['parameters/password', 'cluster-0'], 
+	    ['parameters/libraryfullpath', '/usr/lib64/libmariadb.so.3'],
+	    ['polling/interval', '30'],
+	    ['polling/timeout', '60'],
+	    ['polling/reconfirmation', '1']
+    ],
     []
 ];
 
