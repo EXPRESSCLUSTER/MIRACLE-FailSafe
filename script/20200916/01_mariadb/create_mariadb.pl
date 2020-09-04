@@ -57,7 +57,7 @@ my $cluster_param =
 #  Top of the list is master node.
 my $server =
 [
-    ['`hostname`'],
+    ['`hostname -s`'],
     []
 ];
 # 
