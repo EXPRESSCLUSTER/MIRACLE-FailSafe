@@ -49,7 +49,7 @@
    ```
 1. MariaDB を監視する場合、監視用のデータベース名、ユーザ名、パスワードを適宜変更してください。
    ```perl
-   (前略) ['parameters/database', 'testdb'], ['parameters/username', 'root'], ['parameters/password', 'cluster-0'] (後略)
+   (前略) ['parameters/database', 'testdb'], ['parameters/username', 'root'], ['parameters/password', 'password'] (後略)
    ```
 1. ダウンロードした Perl ファイル (create_xxx.pl) を実行してください。
 1. クラスタを起動している場合、クラスタを停止してください。
