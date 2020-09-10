@@ -141,6 +141,8 @@ my $monitor =
             ['relation/name', 'exec-apache'],
             ['emergency/action', '1'],
             ['emergency/threshold/restart', '2'],
+	    ['parameters/servername', 'localhost'],
+            ['parameters/port', '80'],
             ['polling/interval', '30'],
             ['polling/timeout', '60'],
             ['polling/reconfirmation', '1']
